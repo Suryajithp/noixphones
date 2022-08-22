@@ -1,0 +1,53 @@
+<section style="margin-top: 150px;">
+    <div class="row">
+        <div class="container">
+            <div class="col-md-8 mx-auto ">
+                <h1 class="text-center">ADD NEW ADDRESS</h1>
+                <form action="/address-edit/{{address._id}}" method="post" >
+                    <!-- <i class="fas fa-paper-plane"></i> -->
+                    <div class="address-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="Name" placeholder="{{address.Name}}" value="{{address.Name}}"
+                            id="contact-addname" onkeyup="validateAddName()">
+                        <span id="addname-error"></span>
+                    </div>
+                    <div class="address-group">
+                        <label>Mobile number</label>
+                        <input type="text" class="form-control" name="Mobile" placeholder="{{address.mobile}}" value="{{address.mobile}}"
+                            id="contact-addphone" onkeyup="validateAddPhone()">
+                        <span id="addphone-err"></span>
+                    </div>
+                    <input type="text" name="userId" placeholder="Company neme here..." value="{{user}}" hidden>
+                    <div class="address-group d-flex">
+                        <div class="col-md-6" >
+                            <label>District</label>
+                        <input type="text" class="form-control" name="district" placeholder="{{address.district}}" value="{{address.district}}"
+                            id="contact-adddistrict" onkeyup="validateAddDistrict()">
+                        <span id="adddistrict-error"></span>
+                        </div>
+                        <div class="col-md-6" >
+                            <label>Pincode</label>
+                        <input type="text" class="form-control" name="pincode" placeholder="{{address.pincode}}" value="{{address.pincode}}"
+                            id="contact-addpincode" onkeyup="validateAddPincode()">
+                        <span id="addpincode-error"></span>
+                        </div>
+                    </div>
+                    <div class="address-group">
+                        <label>Your address</label>
+                        <input type="text" class="form-control" name="address" placeholder="{{address.address}}"  value="{{address.address}}"
+                           id="contact-message"  onkeyup="validateAddAddress()"></input>
+                            <div>
+
+                        <span id="address-err"></span>
+                            </div>
+                    </div>
+                    <button class="submit-btn-1 mt-0 btn-hover-1" onclick="return validateAddForm()"
+                        type="submit">Submit</button>
+                        
+                    <span id="addsubmit-err"></span>
+                </form>
+                {{!-- <a href="/order-list" class="btn btn-dark">View Orders</a> --}}
+            </div>
+        </div>
+    </div>
+</section>

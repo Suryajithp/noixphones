@@ -1,0 +1,532 @@
+<div class="wide-layout">
+
+    <!-- Body main wrapper start -->
+    <div class="wrapper">
+        <!-- START SLIDER AREA -->
+        <div class="slider-area slider-2 section">
+            <div class="bend niceties preview-2">
+                <div id="nivoslider-2" class="slides">
+                    <img src="main/img/slider/slider-2/slider-1.jpg" alt="" title="#slider-direction-0" />
+                    <img src="main/img/slider/slider-2/slider-2.jpg" alt="" title="#slider-direction-1" />
+                    <img src="main/img/slider/slider-2/slider-3.png" alt="" title="#slider-direction-2" />
+                    {{!-- <img src="main/img/slider/slider-2/slider-1.jpg" alt="" title="#slider-direction-4" />
+                    <img src="main/img/slider/slider-2/slider-1.jpg" alt="" title="#slider-direction-5" /> --}}
+                </div>
+                {{#each banner}}
+                <!-- ===== direction 1 ===== -->
+                <div id="slider-direction-{{@index}}" class="slider-direction">
+                    <div class="slider-content-1">
+                        <div class="title-container">
+                            <div class="wow rotateInDownLeft" data-wow-duration="2s" data-wow-delay="0.5s">
+                                <h6 class="slider2-title-1">Best price : ₹{{product.price}}</h6>
+                            </div>
+                            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+                                <h1 class="slider2-title-2">new smart phone</h1>
+                            </div>
+                            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
+                                <h2 class="slider2-title-3">{{product.Proname}}</h2>
+                            </div>
+                            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+                                <p class="slider2-title-4">There are many variations of passages of Lorem Ipsum
+                                    availables, but
+                                    the majority have suffered alteration in some form.</p>
+                            </div>
+                            <div class="slider-button wow fadeInUp" data-wow-duration="1s" data-wow-delay="2.5s">
+                                <a href="/view-single/{{product._id}}" class="button extra-small button-black">
+                                    <span class="text-uppercase">Buy now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- layer 1 -->
+                    <div class="slider-content-1-image">
+                        <div class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <div class="layer-1-1">
+                                <img src="/product-images/{{product.image.[0]}}" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <!-- END SLIDER AREA -->
+
+        <!-- Start page content -->
+        <section id="page-content" class="page-wrapper section bg-white">
+            <!-- BANNER-SECTION START -->
+            <div class="banner-section ptb-60">
+                <div class="container">
+                    <div class="row">
+                        <!-- banner-item start -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="banner-item banner-2">
+                                <div class="banner-img">
+                                    <a href="#"><img src="main/img/banner/2.jpg" alt=""></a>
+                                </div>
+                                <h3 class="banner-title-2"><a href="#">sony smartphone</a></h3>
+                                <h3 class="pro-price">₹ 55000</h3>
+                                <div class="banner-button">
+                                    <a href="#">Shop now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- banner-item end -->
+                        <!-- banner-item start -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="banner-item banner-3">
+                                <div class="banner-img">
+                                    <a href="#"><img src="main/img/banner/3.jpg" alt=""></a>
+                                </div>
+                                <div class="banner-info">
+                                    <h3 class="banner-title-2"><a href="#">Product Name</a></h3>
+                                    <ul class="banner-featured-list">
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>Lorem ipsum dolor</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>amet, consectetur</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>adipisicing elitest,</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>eiusmod tempor</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>labore et dolore.</span>
+                                        </li>
+                                    </ul>
+                                    <div class="banner-button">
+                                        <a href="#">Discover <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- banner-item end -->
+                        <!-- banner-item start -->
+                        <div class="col-lg-4 col-md-6 d-block d-md-none d-lg-block">
+                            <div class="banner-item banner-4">
+                                <div class="banner-img">
+                                    <a href="#"><img src="main/img/banner/4.jpg" alt=""></a>
+                                </div>
+                                <h3 class="banner-title-2"><a href="#">phone name</a></h3>
+                                <div class="banner-button">
+                                    <a href="#">Shop now <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- banner-item end -->
+                    </div>
+                </div>
+            </div>
+            <!-- BANNER-SECTION END -->
+
+            <!-- FEATURED PRODUCT SECTION START -->
+            <div class="featured-product-section section-bg-tb pt-80 pb-55">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-left mb-20">
+                                <h2 class="uppercase">new products</h2>
+                                <h6>There are many variations of passages of brands available,</h6>
+                            </div>
+                            <div class="featured-product">
+                                <div class="active-featured-product slick-arrow-2">
+                                    {{#each products}}
+                                    <div class="product-item product-item-2">
+                                        <div class="product-img">
+                                            <a href="/view-single/{{this._id}}">
+                                                <img src="/product-images/{{this.image.[0]}}" alt="" />
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <h6 class="product-title">
+                                                <a href="/view-single/{{this._id}}">{{this.Proname}}</a>
+                                            </h6>
+                                            <h6 class="brand-name">Sumsung</h6>
+                                            <h3 class="pro-price">₹<del>{{this.offerprice}}</del> &nbsp;₹{{this.price}}
+                                            </h3>
+                                        </div>
+                                        <ul class="action-button text-center">
+                                            <li>
+                                                <a class="btn" onclick="addToWishlist('{{this._id}}')"
+                                                    title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="/view-single/{{this._id}}" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal" title="Quickview"><i
+                                                        class="zmdi zmdi-zoom-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a title="Add to cart" class="btn"
+                                                    onclick="addToCart('{{this._id}}')"><i
+                                                        class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FEATURED PRODUCT SECTION END -->
+
+            <!-- UP COMMING PRODUCT SECTION START -->
+            <div class="up-comming-product-section ptb-60">
+                <div class="container">
+                    <div class="row">
+                        <!-- up-comming-pro -->
+                        <div class="col-lg-8">
+                            <div class="up-comming-pro gray-bg up-comming-pro-2 clearfix">
+                                <div class="up-comming-pro-img f-left">
+                                    <a href="#">
+                                        <img src="main/img/up-comming/2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="up-comming-pro-info f-left">
+                                    <h3><a href="#">Galaxy Z Flip4 Bespoke Edition</a></h3>
+                                    <p>The era of planning looks around your phone is over.
+                                         Small but mighty when folded, Galaxy Z Flip4 is a compact full-sized smartphone,
+                                          and just the right size to slip in a pocket when it's time to slay. </p>
+                                    <div class="up-comming-time-2 clearfix">
+                                        <div data-countdown="2019/01/15"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-block d-md-none d-lg-block">
+                            <div class="banner-item banner-1">
+                                <div class="ribbon-price">
+                                    <span>₹ 55000</span>
+                                </div>
+                                <div class="banner-img">
+                                    <a href="#"><img src="main/img/banner/1.jpg" alt=""></a>
+                                </div>
+                                <div class="banner-info">
+                                    <h3><a href="#">Galaxy Z Flip4 </a></h3>
+                                    <ul class="banner-featured-list">
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>Capture life with new perspective</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>Your best angles with FlexCam</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>Customizable to your content</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>Durable inside and out</span>
+                                        </li>
+                                        <li>
+                                            <i class="zmdi zmdi-check"></i><span>Unfold your world</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- UP COMMING PRODUCT SECTION END -->
+
+            <!-- PRODUCT TAB SECTION START -->
+            <div class="product-tab-section section-bg-tb pt-80 pb-55">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="section-title text-left mb-40">
+                                <h2 class="uppercase">product list</h2>
+                                <h6>There are many variations of passages of brands available,</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-tab pro-tab-menu pro-tab-menu-2 text-right">
+                                <!-- Nav tabs -->
+                                <ul class="nav">
+                                    <li><a class="active" href="#popular-product" data-bs-toggle="tab">Popular Products
+                                        </a></li>
+                                    <li><a href="#new-arrival" data-bs-toggle="tab">New Arrival</a></li>
+                                    <li><a href="#best-seller" data-bs-toggle="tab">Best Seller</a></li>
+                                    <li><a href="#special-offer" data-bs-toggle="tab">Special Offer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- popular-product start -->
+                                <div id="popular-product" class="tab-pane active show">
+                                    <div class="row">
+                                        <!-- product-item start -->
+                                        {{#each products}}
+                                        <div class="col-lg-3 col-md-4">
+                                            <div class="product-item product-item-2">
+                                                <div class="product-img">
+                                                    <a href="/view-single/{{this._id}}">
+                                                        <img src="/product-images/{{this.image.[0]}}" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="product-info">
+                                                    <h6 class="product-title">
+                                                        <a href="/view-single/{{this._id}}">{{this.Proname}}</a>
+                                                    </h6>
+                                                    <h6 class="brand-name">Sumsung</h6>
+                                                    <h3 class="pro-price">₹<del>{{this.offerprice}}</del>
+                                                    <p>{{this.wishlist}}</p>
+                                                        &nbsp;₹{{this.price}}</h3>
+                                                </div>
+                                                <ul class="action-button">
+                                                    <li>
+                                                      {{!-- {{#if this.wishlist }} --}}
+                                                        <a onclick="addToWishlist('{{this._id}}')" title="Wishlist"><i
+                                                                class="zmdi zmdi-favorite"></i></a>
+                                                     {{!-- {{/if}} --}}
+                                                    </li>
+                                                    <li>
+                                                        <a title="Add to cart" class="btn"
+                                                            onclick="addToCart('{{this._id}}')"><i
+                                                                class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                                    </li>
+                                                    {{!-- <li>
+                                                        <a href="#" title="Compare"><i
+                                                                class="zmdi zmdi-refresh"></i></a>
+                                                    </li> --}}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                <!-- popular-product end -->
+                                {{!--
+                                <!-- new-arrival start -->
+                                <div id="new-arrival" class="tab-pane" role="tabpanel">
+                                    <div class="row">
+                                        <!-- product-item start -->
+                                        <div class="col-lg-3 col-md-4">
+                                            <div class="product-item product-item-2">
+                                                <div class="product-img">
+                                                    <a href="single-product.html">
+                                                        <img src="main/img/product-2/7.jpg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="product-info">
+                                                    <h6 class="product-title">
+                                                        <a href="single-product.html">Product Name</a>
+                                                    </h6>
+                                                    <h6 class="brand-name">Sumsung</h6>
+                                                    <h3 class="pro-price">$ 869.00</h3>
+                                                </div>
+                                                <ul class="action-button">
+                                                    <li>
+                                                        <a href="#" title="Wishlist"><i
+                                                                class="zmdi zmdi-favorite"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#productModal" title="Quickview"><i
+                                                                class="zmdi zmdi-zoom-in"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="Compare"><i
+                                                                class="zmdi zmdi-refresh"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="Add to cart"><i
+                                                                class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- product-item end -->
+                                    </div>
+                                </div>
+                                <!-- new-arrival end -->
+                                <!-- best-seller start -->
+                                <div id="best-seller" class="tab-pane" role="tabpanel">
+                                    <div class="row">
+                                        <!-- product-item start -->
+                                        <div class="col-lg-3 col-md-4">
+                                            <div class="product-item product-item-2">
+                                                <div class="product-img">
+                                                    <a href="single-product.html">
+                                                        <img src="main/img/product-2/1.jpg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="product-info">
+                                                    <h6 class="product-title">
+                                                        <a href="single-product.html">Product Name</a>
+                                                    </h6>
+                                                    <h6 class="brand-name">Sumsung</h6>
+                                                    <h3 class="pro-price">$ 869.00</h3>
+                                                </div>
+                                                <ul class="action-button">
+                                                    <li>
+                                                        <a href="#" title="Wishlist"><i
+                                                                class="zmdi zmdi-favorite"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#productModal" title="Quickview"><i
+                                                                class="zmdi zmdi-zoom-in"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="Compare"><i
+                                                                class="zmdi zmdi-refresh"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="Add to cart"><i
+                                                                class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- product-item end -->
+                                    </div>
+                                </div>
+                                <!-- best-seller end -->
+                                <!-- special-offer start -->
+                                <div id="special-offer" class="tab-pane" role="tabpanel">
+                                    <div class="row">
+                                        <!-- product-item start -->
+                                        <div class="col-lg-3 col-md-4">
+                                            <div class="product-item product-item-2">
+                                                <div class="product-img">
+                                                    <a href="single-product.html">
+                                                        <img src="main/img/product-2/3.jpg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="product-info">
+                                                    <h6 class="product-title">
+                                                        <a href="single-product.html">Product Name</a>
+                                                    </h6>
+                                                    <h6 class="brand-name">Sumsung</h6>
+                                                    <h3 class="pro-price">$ 869.00</h3>
+                                                </div>
+                                                <ul class="action-button">
+                                                    <li>
+                                                        <a href="#" title="Wishlist"><i
+                                                                class="zmdi zmdi-favorite"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#productModal" title="Quickview"><i
+                                                                class="zmdi zmdi-zoom-in"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="Compare"><i
+                                                                class="zmdi zmdi-refresh"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="Add to cart"><i
+                                                                class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <!-- special-offer end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PRODUCT TAB SECTION END -->
+           
+        </section>
+        <!-- End page content -->
+
+        <!-- START QUICKVIEW PRODUCT -->
+        <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-product clearfix">
+                                <div class="product-images">
+                                    <div class="main-image images">
+                                        <img alt="" src="main/img/product/quickview.jpg">
+                                    </div>
+                                </div><!-- .product-images -->
+
+                                <div class="product-info">
+                                    <h1>Aenean eu tristique</h1>
+                                    <div class="price-box-3">
+                                        <div class="s-price-box">
+                                            <span class="new-price">£160.00</span>
+                                            <span class="old-price">£190.00</span>
+                                        </div>
+                                    </div>
+                                    <a href="single-product-left-sidebar.html" class="see-all">See all features</a>
+                                    <div class="quick-add-to-cart">
+                                        <form method="post" class="cart">
+                                            <div class="numbers-row">
+                                                <input type="number" id="french-hens" value="3">
+                                            </div>
+                                            <button class="single_add_to_cart_button" type="submit">Add to cart</button>
+                                        </form>
+                                    </div>
+                                    <div class="quick-desc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec
+                                        est tristique auctor. Donec non est at libero.
+                                    </div>
+                                    <div class="social-sharing">
+                                        <div class="widget widget_socialsharing_widget">
+                                            <h3 class="widget-title-modal">Share this product</h3>
+                                            <ul class="social-icons clearfix">
+                                                <li>
+                                                    <a class="facebook" href="#" target="_blank" title="Facebook">
+                                                        <i class="zmdi zmdi-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="google-plus" href="#" target="_blank" title="Google +">
+                                                        <i class="zmdi zmdi-google-plus"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="twitter" href="#" target="_blank" title="Twitter">
+                                                        <i class="zmdi zmdi-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="pinterest" href="#" target="_blank" title="Pinterest">
+                                                        <i class="zmdi zmdi-pinterest"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="rss" href="#" target="_blank" title="RSS">
+                                                        <i class="zmdi zmdi-rss"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><!-- .product-info -->
+                            </div><!-- .modal-product -->
+                        </div><!-- .modal-body -->
+                    </div><!-- .modal-content -->
+                </div><!-- .modal-dialog -->
+            </div>
+            <!-- END Modal -->
+        </div>
+        <!-- END QUICKVIEW PRODUCT -->
+
+    </div>
+
+</div>
+
+
+
+<script>
+</script>

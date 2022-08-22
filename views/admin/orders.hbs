@@ -1,0 +1,87 @@
+<div class="row mt-5">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="header-title pb-3 mt-0">Payments</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr class="align-self-center">
+                                <th>Oder Id</th>
+                                <th>User Id</th>
+                                {{!-- <th>Mobile No</th> --}}
+                                <th>Payment Type</th>
+                                {{!-- <th>Order Date</th> --}}
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each response}}
+                            <tr>
+                                <td>{{this._id}}</td>
+                                <td>{{this.userId}}</td>
+                                {{!-- <td>{{this.deliveryDetails.Mobile}}</td> --}}
+                                <td>{{this.paymentMethod}}</td>
+                                {{!-- <td>{{this.date}}</td> --}}
+                                <td>₹ {{this.totalAmount}}</td>
+
+                                <td><span class="  ">{{this.status}}</span>
+                                </td>
+                                <td class="change-status">
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button"
+                                            data-toggle="dropdown">Status change
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><button class="btn " onclick="changeStatus('{{this._id}}',1)">Pending</button></li>
+                                            <li><button class="btn " onclick="changeStatus('{{this._id}}',2)">Placed</button></li>
+                                            <li><button class="btn " onclick="changeStatus('{{this._id}}',3)">Canceld</button></li>
+                                            <li><button class="btn " onclick="changeStatus('{{this._id}}',4)">Deleverd</button></li>
+                                            <li><button class="btn " onclick="changeStatus('{{this._id}}',5)">Returned</button></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                {{!-- <td>
+                                    <a href="/admin/status-order/{{this._id}}" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Are you want to change status of {{this._id}} ?')">
+                                        <i class="fas fa-trash-alt"></i>
+                                </td> --}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <!--end table-responsive-->
+                <div class="pt-3 border-top text-right">
+                    <a href="#" class="text-primary">View all <i class="mdi mdi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function changeStatus(orderId, status) {
+
+        console.log('vanneee');
+        $.ajax({
+            url: '/admin/change-orderstatus',
+            data: {
+                order: orderId,
+                status: status
+            },
+            method: 'post',
+            success: (response) => {
+                if (response.changeStatus) {
+                    swal("Change status")
+                    location.reload()
+                } else {
+                    console.log(response);
+                }
+            }
+        })
+    }
+</script>

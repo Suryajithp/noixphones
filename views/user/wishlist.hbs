@@ -1,0 +1,98 @@
+<section>
+    <div class="condainer p-5">
+        <div class="wish" style="margin-top: 100px;">
+            {{#if products}}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs-inner">
+                            <h1 class="breadcrumbs-title">wishlist</h1>
+                            <ul class="breadcrumb-list">
+                                <li><a href="/">Home</a></li>
+                                <li>wishlist</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 mx-auto">
+            <div class="tab-pane" id="wishlist" style="margin-top: 20px;">
+                <div class="wishlist-content">
+                    <form action="#">
+                        <div class="table-content table-responsive mb-50">
+                            <table class="text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="product-thumbnail">product</th>
+                                        <th class="product-price">price</th>
+                                        {{!-- <th class="product-stock">Stock status</th> --}}
+                                        <th class="product-add-cart">add to cart</th>
+                                        <th class="product-remove">remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each products}}
+                                    <tr>
+                                        <td class="product-thumbnail">
+                                            <div class="pro-thumbnail-img">
+                                                <img src="/product-images/{{this.product.image.[0]}}" alt="">
+                                            </div>
+                                            <div class="pro-thumbnail-info text-left">
+                                                <h6 class="product-title-2">
+                                                    <a href="#">{{this.product.Proname}}</a>
+                                                </h6>
+                                                <p>Brand: {{this.product.brand}}</p>
+                                            
+                                                <p> Color: {{this.product.color}}</p>
+                                            </div>
+                                        </td>
+                                        <td class="product-price">₹{{this.product.price}}</td>
+                                        {{!-- <td class="product-stock text-uppercase">{{this.product.stock}}</td> --}}
+                                        <td class="product-add-cart">
+                                            <a onclick="addToCart('{{this.product._id}}')" title="Add To Cart">
+                                                <i class="zmdi zmdi-shopping-cart-plus"></i>
+                                            </a>
+                                        </td>
+                                        <td class="product-remove">
+                                            <button class="dec qtybutton"
+                                                onclick="removeWishProduct('{{this._id}}','{{this.product._id}}','{{../user._id}}')">
+                                                <i class="zmdi zmdi-close"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="breadcrumbs-section plr-200 mb-80 section">
+            <div class="breadcrumbs overlay-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcrumbs-inner">
+                                <h1 class="breadcrumbs-title">Wishlist is Empty</h1>
+                                <ul class="breadcrumb-list">
+                                    <li><a href="/">Home</a></li>
+                                    <li>wishlist</li>
+                                </ul>
+                            </div>
+                            <div class="mx-auto" style="width: fit-content;">
+                                <a href="/" class="btn btn-dark ms-auto" style="width: fit-content;"> Continue
+                                    Shopping</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    </div>
+</section>

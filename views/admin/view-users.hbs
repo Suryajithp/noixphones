@@ -1,0 +1,50 @@
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row mt-3 mb-5 text-center" style="background-color: rgba(104, 105, 104, 0.038);">
+                    <h4 class="mt-1 header-title">Users</h4>
+                </div>
+
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
+                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">User name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each products}}
+                        <tr>
+                            <th scope="row">{{@index}}</th>
+                            <td>{{this.Name}}</td>
+                            <td>{{this.Email}}</td>
+                            <td>{{this.Mobile}}</td>
+                            {{!-- <td><img style="width: 50px;height: 50px;" src="{{this.image}}" alt=""></td> --}}
+                            <td>
+                                {{#if this.action}}
+                                <a href="/admin/block-user/{{this._id}}" class="btn btn-danger"
+                                    onclick="return confirm('Are you want to block {{this.Email}} ?')">Block</a>
+                                {{else}}
+                                <a href="/admin/unblock-user/{{this._id}}" class="btn btn-dark"
+                                    onclick="return confirm('Are you want to unblock {{this.Email}} ?')">unblock</a>
+                                {{/if}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+        </div>
+    </div> <!-- end col -->
+
+</div> <!-- end row -->

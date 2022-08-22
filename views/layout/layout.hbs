@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>Zoogler - Responsive Bootstrap 4 Admin Dashboard</title>
+  <meta content="Admin Dashboard" name="description" />
+  <meta content="Mannatthemes" name="author" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  {{!-- {{#if admin}} --}}
+  <link rel="shortcut icon" href="/main2/assets/images/favicon.ico">
+
+  <link href="/main2/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/main2/assets/css/icons.css" rel="stylesheet" type="text/css">
+  <link href="/main2/assets/css/style.css" rel="stylesheet" type="text/css">
+
+  <link rel="shortcut icon" href="/main2/assets/images/favicon.ico">
+
+  <!-- DataTables -->
+  <link href="/main2/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/main2/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <!-- Responsive datatable examples -->
+  <link href="/main2/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js"></script>
+
+  <link href="/main2/assets/plugins/alertify/css/alertify.css" rel="stylesheet" type="text/css">
+
+  <link href="/main2/assets/plugins/dropify/css/dropify.min.css" rel="stylesheet">
+
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.png">
+  {{!-- {{#if user}} --}}
+  <!-- All CSS Files -->
+  <!-- Bootstrap fremwork main css -->
+  <link rel="stylesheet" href="/main/css/bootstrap.min.css">
+  <!-- Nivo-slider css -->
+  <link rel="stylesheet" href="/main/lib/css/nivo-slider.css">
+  <!-- This core.css file contents all plugings css file. -->
+  <link rel="stylesheet" href="/main/css/core.css">
+  <!-- Theme shortcodes/elements style -->
+  <link rel="stylesheet" href="/main/css/shortcode/shortcodes.css">
+  <!-- Theme main style -->
+  <link rel="stylesheet" href="/main/style.css">
+  <!-- Responsive css -->
+  <link rel="stylesheet" href="/main/css/responsive.css">
+  <!-- User style -->
+  <link rel="stylesheet" href="/main/css/custom.css">
+
+  <!-- Style customizer (Remove these two lines please) -->
+  <link rel="stylesheet" href="/main/css/style-customizer.css">
+  {{!-- {{/if}} --}}
+  <link href="#" data-style="styles" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Modernizr JS -->
+  <script src="/main/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+
+
+</head>
+
+<body>
+  {{#if admin}}
+  {{>admin-header}}
+  {{else}}
+  {{>user-header}}
+  {{/if}}
+  {{{body}}}
+  {{#if admin}}
+  <footer class="footer">
+    © 2022 Galexy by Suryajith.
+  </footer>
+  {{else}}
+  {{>footer}}
+  {{/if}}
+
+
+  <!-- jquery latest version -->
+  
+  <script src="/main/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="/main/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+  <!-- Bootstrap framework js -->
+  <script src="/main/js/bootstrap.bundle.min.js"></script>
+  <!-- jquery.nivo.slider js -->
+  <script src="/main/lib/js/jquery.nivo.slider.js"></script>
+  <script src="/javascripts/script.js"></script>
+
+  <!-- All js plugins included in this file. -->
+  <script src="/main/js/plugins.js"></script>
+  <!-- Main js file that contents all jQuery plugins activation. -->
+  <script src="/main/js/main.js"></script>
+  <!-- Ajax -->
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  {{#if admin}}
+  <!-- jQuery  -->
+  <script src="/main2/assets/js/jquery.min.js"></script>
+  <script src="/main2/assets/js/popper.min.js"></script>
+  <script>
+    const labels = [
+      'Cod',
+      'PayPal',
+      'Razorpay',
+    ];
+
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [{{ Total.codTotal.[0].totalAmount }},{{ Total.razorpayTotal.[0].totalAmount }},{{ Total.paypalTotal.[0].totalAmount }}]
+            }]
+        };
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+  </script>
+
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+  <script src="/main2/assets/js/bootstrap.min.js"></script>
+  <script src="/main2/assets/js/modernizr.min.js"></script>
+  <script src="/main2/assets/js/detect.js"></script>
+  <script src="/main2/assets/js/fastclick.js"></script>
+  <script src="/main2/assets/js/jquery.slimscroll.js"></script>
+  <script src="/main2/assets/js/jquery.blockUI.js"></script>
+  <script src="/main2/assets/js/waves.js"></script>
+  <script src="/main2/assets/js/jquery.nicescroll.js"></script>
+  <script src="/main2/assets/js/jquery.scrollTo.min.js"></script>
+
+  <script src="/main2/assets/plugins/chart.js/chart.min.js"></script>
+  <script src="/main2/assets/pages/dashboard.js"></script>
+
+  <!-- App js -->
+  <script src="/main2/assets/js/app.js"></script>
+
+
+  <!-- Required datatable js -->
+  <script src="/main2/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+  <!-- Buttons examples -->
+  <script src="/main2/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/jszip.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/pdfmake.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/vfs_fonts.js"></script>
+  <script src="/main2/assets/plugins/datatables/buttons.html5.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/buttons.print.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/buttons.colVis.min.js"></script>
+  <!-- Responsive examples -->
+  <script src="/main2/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+  <script src="/main2/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+  <!-- Datatable init js -->
+  <script src="/main2/assets/pages/datatables.init.js"></script>
+
+  <script src="/main2/assets/plugins/alertify/js/alertify.js"></script>
+  <script src="/main2/assets/pages/alertify-init.js"></script>
+
+  <script src="/main2/assets/plugins/dropify/js/dropify.min.js"></script>
+  <script src="/main2/assets/pages/dropify.init.js"></script>
+  <script src="/javascripts/script.js"></script>
+  {{/if}}
+
+
+
+</body>
+
+</html>

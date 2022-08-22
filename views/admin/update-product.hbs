@@ -1,0 +1,94 @@
+<section>
+    <div class="condainer mt-4">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h2 class="text-center">Update Product</h2>
+                <form action="/admin/update-product/{{product._id}}" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" class="form-control" name="Proname" value="{{product.Proname}}"
+                            id="contact-name" onkeyup="validateName()">
+                        <span id="name-error"></span>
+                        <label>Discription</label>
+                        <textarea rows="5" type="text" class="form-control" name="description" value="{{product.description}}" id="contact-discription"
+                            onkeyup="validateDiscription()"></textarea>
+                        <div>
+
+                            <span id="discription-error"></span>
+                        </div>
+                        <label>Offer Price</label>
+                        <input type="text" class="form-control" name="price" value="{{product.price}}"
+                            id="contact-price" onkeyup="validatePrice()">
+                        <span id="price-error"></span>
+                        <label>Price</label>
+                        <input type="text" class="form-control" name="offerprice" id="contact-offerprice" value="{{product.offerprice}}"
+                            onkeyup="validateOfferPrice()">
+                        <span id="offerprice-error"></span>
+                        <div class="d-flex ml-5">
+                            <div class="col-md-4">
+                                {{!-- <h6 class="input-title mt-0">Single select</h6> --}}
+                                <label>Category</label>
+                                <select class=" form-control " style="width: 100%; height:40px;" name="cat">
+
+                                    {{#each category}}
+                                    <option>{{this.catname}}</option>
+                                    {{!-- <option value="Tabs">Tablet</option>
+                                    <option value="Watch">Watches</option> --}}
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div><label>Ram/storage</label>
+                                <input type="text" class="form-control" name="ram" style="width: 80%;"
+                                    value="{{product.ram}}" id="contact-ram" onkeyup="validateRam()">
+                                <span id="ram-error"></span>
+                            </div>
+                            <div>
+                                <label>Storage</label>
+                                <input type="text" class="form-control" name="storage" style="width: 80%;"
+                                    value="{{product.storage}}" id="contact-storage" onkeyup="validateStorage()">
+                                <span id="storage-error"></span>
+                            </div>
+
+                        </div>
+                        <div class="d-flex ml-5">
+                            <div><label>Color</label>
+                                <input type="text" class="form-control" name="color" style="width: 80%;"
+                                    value="{{product.color}}" id="contact-color" onkeyup="validateColor()">
+                                <span id="color-error"></span>
+                            </div>
+                            <div> <label>Stock</label>
+                                <input type="text" class="form-control" name="stock" style="width: 80%;"
+                                    value="{{product.stock}}" id="contact-stock" onkeyup="validateStock()">
+                                <span id="stock-error"></span>
+                            </div>
+                            <div> <label>Brand</label>
+                                <input type="text" class="form-control" name="brand" style="width: 80%;"
+                                    value="{{product.brand}}" id="contact-brand" onkeyup="validateBrand()">
+                                <span id="brand-error"></span>
+                            </div>
+                        </div>
+                        <label>Image</label>
+                        <img src="/product-images/{{product.image.[0]}}" alt="" style="width: 70px; height: auto;"
+                            id="imgview" class="p-3">
+                        <input type="file" class="form-control" name="image" value="{{product.image}}"
+                            onchange="viewImage(event)" multiple>
+                    </div>
+                    <div class="mx-auto mt-3" style=" width: fit-content;">
+                        <button type="submit" class="btn btn-warning"
+                            onclick="return validateProductForm()">Submit</button>
+                        <span id="productSubmit-err"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    function viewImage(event) {
+        document.getElementById('imgview').src = URL.createObjectURL(event.target.files[0])
+    }
+</script>
+
+<script defer src="https://cdn.crop.guide/loader/l.js?c=XNRVNN"></script>

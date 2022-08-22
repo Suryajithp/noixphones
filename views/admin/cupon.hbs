@@ -1,0 +1,32 @@
+<section>
+    <div class="condainer mt-4">
+        <div class="row mt-5">
+             <h2 class="text-center">Add new Category offer</h2>
+            <div class="col-md-4 mx-auto">
+               
+                <form action="/admin/cupon" method="post">
+                 <div class="form-group">
+                        <label>Offer persentage</label>
+                        <input type="text" class="form-control" name="offerPercent" id="contact-name"
+                            onkeyup="validateOfferName()">
+                        <span id="name-error"></span>
+                        <label>Offer Code</label>
+                        <input type="text" class="form-control" name="offerCode" id="contact-code"
+                            onkeyup="validateCuponCode()">
+                        <span id="code-error"></span>
+                        <label>Offer expare date</label>
+                        <input type="date" class="form-control" name="expaire" id="contact-date"
+                            onkeyup="validateCuponDate()">
+                        <span id="date-error"></span>
+                        <div class="mx-auto mt-3" style=" width: fit-content;">
+                            <button type="submit" class="btn btn-warning"
+                                onclick="return validateCuponForm()">Submit</button>
+                            <span id="submit-err"></span>
+                        </div>
+
+                </form>
+            </div>
+           
+          
+    </div>
+</section>

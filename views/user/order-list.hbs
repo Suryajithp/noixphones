@@ -1,0 +1,103 @@
+<div class="row" style="margin-top: 150px;">
+    {{#if orders}}
+    <div class="text-center">
+        <h2 class="mt-5">ORDER LIST</h2>
+    </div>
+    <div class="col-xl-8 mx-auto mt-5">
+        <div class="card">
+            {{!-- <div class="card-body"> --}}
+                {{!-- <h5 class="header-title pb-3 mt-0">Payments</h5> --}}
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <tbody>
+                            {{#each orders}}
+                            <tr>
+                                <td>Order ID: {{this._id}}</td>
+                                <td>{{this.paymentMethod}}</td>
+                                <td>{{this.date.[0]}}</td>
+                                <td>₹{{this.totalAmount}}</td>
+                                {{#if_eq this.status "placed" }}
+                                <td><span class="badge badge-boxed  badge-primary">Placed</span>
+                                </td>
+                                {{/if_eq}}
+                                {{#if_eq this.status "deleverd" }}
+                                <td><span class="badge badge-boxed  badge-success">Deleverd</span>
+                                </td>
+                                {{/if_eq}}
+                                {{#if_eq this.status "returned" }}
+                                <td><span class="badge badge-boxed  badge-secondary">Returned</span>
+                                </td>
+                                {{/if_eq}}
+                                {{#if_eq this.status "canceld" }}
+                                <td><span class="badge badge-boxed  badge-danger">Canceld</span>
+                                </td>
+                                {{/if_eq}}
+                                {{#if_eq this.status "pending" }}
+                                <td><span class="badge badge-boxed  badge-warning">Pending</span>
+                                </td>
+                                {{/if_eq}}
+
+                                <td> <a href="/view-order-products/{{this._id}}" class="btn ">view products</a></td>
+                                <td>
+                                    {{#if_eq this.status "canceld" }}
+                                    <a class="btn btn-sm "> Canceld
+                                        {{/if_eq}}
+                                        {{#if_eq this.status "returned" }}
+                                        <a class="btn btn-sm ">Returned
+                                            {{/if_eq}}
+                                            {{#if_eq this.status "placed" }}
+                                            <a href="/cancel-order/{{this._id}}" class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Are you want to cancel {{this._id}} ?')">
+                                                Cancel order
+                                                {{/if_eq}}
+                                                {{#if_eq this.status "pending" }}
+                                                <a href="/cancel-order/{{this._id}}" class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('Are you want to cancel {{this._id}} ?')">
+                                                    Cancel order
+                                                    {{/if_eq}}
+                                                    {{#if_eq this.status "deleverd" }}
+                                                    <a href="/return-order/{{this._id}}" class="btn btn-sm btn-warning"
+                                                        onclick="return confirm('Are you want to cancel {{this._id}} ?')">
+                                                        Return
+
+                                                        {{/if_eq}}
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <!--end table-responsive-->
+                <div class="pt-3 border-top text-right">
+                    <a href="#" class="text-primary">View all <i class="mdi mdi-arrow-right"></i></a>
+                </div>
+                {{!--
+            </div> --}}
+        </div>
+    </div>
+    {{else}}
+    <div class="breadcrumbs overlay-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs-inner">
+                        <h1 class="breadcrumbs-title">order is Empty</h1>
+                        <ul class="breadcrumb-list">
+                            <li><a href="/">Home</a></li>
+                            <li>orders</li>
+                        </ul>
+                        <div class="mx-auto" style="width: fit-content;">
+                                <a href="/" class="btn btn-dark ms-auto" style="width: fit-content;"> Continue
+                                    Shopping</a>
+
+                            </div>
+                    </div>
+                    <div class="mx-auto">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>

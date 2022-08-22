@@ -1,0 +1,200 @@
+<div class="wrapper" style="margin-top: 150px;">
+
+
+    {{#if products}}
+
+    <!-- BREADCRUMBS SETCTION START -->
+    <div class="breadcrumbs-section plr-200 mb-80 section">
+        <div class="breadcrumbs overlay-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs-inner">
+                            <h1 class="breadcrumbs-title">Shopping Cart</h1>
+                            <ul class="breadcrumb-list">
+                                <li><a href="/">Home</a></li>
+                                <li>Shopping Cart</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BREADCRUMBS SETCTION END -->
+
+    <!-- Start page content -->
+    <section id="page-content" class="page-wrapper section">
+
+        <!-- SHOP SECTION START -->
+        <div class="shop-section mb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <ul class="nav cart-tab">
+                            <li>
+                                <a class="active" href="/cart" data-bs-toggle="tab">
+                                    <span>01</span>
+                                    Shopping cart
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/checkout">
+                                    <span>02</span>
+                                    Checkout
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#order-complete" data-bs-toggle="tab">
+                                    <span>03</span>
+                                    Order complete
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-10">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!-- shopping-cart start -->
+                            <div class="tab-pane active" id="shopping-cart">
+                                <div class="shopping-cart-content">
+                                    <form action="#">
+                                        <div class="table-content table-responsive mb-50">
+                                            <table class="text-center">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th class="product-thumbnail">product</th>
+                                                        <th class="product-price">price</th>
+                                                        <th class="product-quantity">Quantity</th>
+                                                        {{!-- <th class="product-subtotal">total</th> --}}
+                                                        <th class="product-remove">remove</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {{#each products}}
+
+                                                    <tr>
+
+                                                        <td class="product-thumbnail">
+                                                            <div class="pro-thumbnail-img">
+                                                                <img src="/product-images/{{this.product.image.[0]}}"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="pro-thumbnail-info text-left">
+                                                                <h6 class="product-title-2">
+                                                                    <a href="#">{{this.product.Proname}}</a>
+                                                                </h6>
+                                                                <p>Brand: Brand Name</p>
+                                                                <p>Model: Grand s2</p>
+                                                                <p> Color: Black, White</p>
+                                                            </div>
+                                                        </td>
+                                                        <td class="product-price">₹{{this.product.price}}</td>
+
+                                                        <td class="product-quantity">
+                                                            <div class="cart-plus-minus f-left">
+                                                                <button class="dec qtybutton"
+                                                                    onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">
+                                                                    <i class="zmdi zmdi-minus"></i>
+                                                                </button>
+                                                                <span id="{{this.product._id}}">{{this.quantity}}</span>
+                                                                <button class="inc qtybutton"
+                                                                    onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',+1)">
+                                                                    <i class="zmdi zmdi-plus"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                        {{!-- <td class="product-subtotal">$1020.00</td> --}}
+                                                        <td class="product-remove">
+                                                            <button class="dec qtybutton"
+                                                                onclick="removeProduct('{{this._id}}','{{this.product._id}}','{{../user._id}}')">
+                                                                <i class="zmdi zmdi-close"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                {{/each}}
+
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                           <div class="col-md-6"></div>
+                                            <div class="col-md-6">
+                                                <div class="payment-details box-shadow p-30 mb-50">
+                                                    <h6 class="widget-title border-left mb-20">payment details</h6>
+                                                    <table>
+                                                        <tr>
+                                                            <td class="td-title-1">Cart Subtotal</td>
+                                                            <td class="td-title-2">₹{{total}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td-title-1">Shipping and Handing</td>
+                                                            <td class="td-title-2">Free</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td-title-1">GST</td>
+                                                            <td class="td-title-2">₹00.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="order-total">Order Total</td>
+                                                            <td class="order-total-price">₹ <span
+                                                                    id="total">{{total}}</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <div class="col-md-12" style="margin-left: 80%;">
+                                                    <button class="submit-btn-1 black-bg btn-hover-2" type="submit"><a
+                                                            href="/checkout" class="btn btn-dark">Checkout</a></button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                               
+                            </div>
+                            <!-- shopping-cart end -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SHOP SECTION END -->
+
+    </section>
+    <!-- End page content -->
+    {{else}}
+    <div class="breadcrumbs-section plr-200 mb-80 section">
+        <div class="breadcrumbs overlay-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs-inner">
+                            <h1 class="breadcrumbs-title">Shopping Cart is Empty</h1>
+                            <ul class="breadcrumb-list">
+                                <li><a href="/">Home</a></li>
+                                <li>Shopping Cart</li>
+                            </ul>
+                        </div>
+                        <div class="mx-auto" style="width: fit-content;">
+                            <a href="/" class="btn btn-dark text-right" style="width: fit-content;"> Continue Shopping</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+
+
+    <script>
+        
+    </script>

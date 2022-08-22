@@ -1,0 +1,23 @@
+<section style="margin-top: 150px;">
+<div class="row m-0" style="margin-top: 150px;">
+    <div class="col-md-6 m-auto">
+        <div class="containor mt-5 pl-5">
+            <h2 class="text-center">Otp verification</h2>
+            <form action="/verify-otp" method="POST">
+                <div class="form-group">
+                    <label>Otp</label>
+                    <input type="password" class="form-control" name="otp"
+                        id="contact-otp" onkeyup="validateotp()">
+                    <span id="otp-err"></span>
+                </div>
+                <a href="/login" class="sign sign-info mt-5 " style="width: fit-content; text-decoration: none;">Already
+                    have account ?</a>
+                <div class="mx-auto mt-3" style=" width: fit-content;">
+                    <button type="submit" class="btn btn-dark" onclick="return validateFormotp()">Verify</button>
+                        <span id="submit2-err"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>

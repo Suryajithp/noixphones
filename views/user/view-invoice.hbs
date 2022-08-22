@@ -1,0 +1,127 @@
+<div class="breadcrumbs-section plr-200 mb-80 section" style="margin-top: 150px;">
+    <div class="breadcrumbs overlay-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto p-2">
+                    <div class="container">
+                        <div class="row">
+                            <!-- BEGIN INVOICE -->
+                            <div class="col-xs-12">
+                                <div class="grid invoice">
+                                    <div class="grid-body">
+                                        <div class="invoice-title">
+                                            <div class="row">
+                                                <div class="col-xs-12 ">
+                                                    <h2>Galaxy</h2>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <h2>invoice<br>
+                                                        <span class="small">order #{{orderId}}</span>
+                                                    </h2>
+                                                    <h2 class="text-right">
+                                                        <span class="small">invoice no:{{orderId.[1]}}{{orderId.[8]}}{{orderId.[10]}}{{orderId.[11]}}</span>
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <address>
+                                                    <strong>Billed To:</strong><br>
+                                                    {{address.[0].address.Name}}<br>
+                                                    {{address.[0].address.address}}<br>
+                                                    {{address.[0].address.district}},&nbsp;
+                                                    {{address.[0].address.pincode}} <br>
+                                                    <h6 class="pro-price">+91 {{address.[0].address.mobile}}</h6> 
+                                                </address>
+                                            </div>
+                                            <div class="col-xs-6 text-right">
+                                                <address>
+                                                    <strong>Shipped To:</strong><br>
+                                                    {{address.[0].address.Name}}<br>
+                                                    {{address.[0].address.address}}<br>
+                                                    {{address.[0].address.district}},&nbsp;
+                                                    {{address.[0].address.pincode}} <br>
+                                                    <h6 class="pro-price">+91 {{address.[0].address.mobile}}</h6> 
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <address>
+                                                    <strong>Payment Method:</strong><br>
+                                                    {{details.[0].paymentMethod}}<br>
+                                                  
+                                                </address>
+                                            </div>
+                                            <div class="col-xs-6 text-right">
+                                                <address>
+                                                    <strong>Order Date:</strong><br>
+                                                    {{details.[0].date}}
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3>ORDER SUMMARY</h3>
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr class="line">
+                                                            {{!-- <td><strong>#</strong></td> --}}
+                                                            <td class="text-center"><strong>PRODUCT</strong></td>
+                                                            <td class="text-center"><strong>QUANTITY</strong></td>
+                                                            <td class="text-right"><strong>RATE</strong></td>
+                                                            <td class="text-right"><strong>OFFER PRICE</strong></td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {{#each details}}
+                                                        <tr>
+                                                            {{!-- <td></td> --}}
+                                                            <td class="text-center"><strong>{{this.product.Proname}}</strong><br>
+                                                            Brand : {{this.product.brand}} <br>
+                                                            Color : {{this.product.color}}  <br>
+                                                            Ram : {{this.product.ram}}  Storage : {{this.product.storage}}  </td>
+                                                            <td class="text-center">{{this.quantity}}</td>
+                                                            <td class="text-center">₹{{this.product.offerprice}}</td>
+                                                            <td class="text-right">₹{{this.product.price}}</td>
+                                                        </tr>
+                                                        {{/each}}
+                                                        <tr>
+                                                            <td colspan="2"></td>
+                                                            <td class="text-right"><strong>Taxes</strong></td>
+                                                            <td class="text-right"><strong>N/A</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                            </td>
+                                                            <td class="text-right"><strong>Total</strong></td>
+                                                            <td class="text-right"><strong>₹{{details.[0].totalAmount}}</strong></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex">
+                                            <div class="col-md-12  identity">
+                                                <p>Bill from Company CEO<br><strong>Suryajith</strong></p>
+                                            </div>
+                                            <div class="col-md-12 text-right identity">
+                                                <button class="btn btn-secondary">Download Invoice</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END INVOICE -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

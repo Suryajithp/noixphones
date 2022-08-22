@@ -1,0 +1,49 @@
+<section style="margin-top: 150px;">
+    <div class="row">
+        <div class="containe p-5 d-flex">
+            <div class="col-md-9 text-center ">
+                <h1 class="text-center mt-5">Order Product List</h1>
+                {{!-- <a href="/order-list" class="btn btn-dark">View Orders</a> --}}
+
+                {{#each products}}
+                <div class="col-md-12 mx-auto mt-5 d-flex" id="order-view">
+                    <div class="col-md-2 p-5">
+                        <a href="/view-single/{{this.product._id}}">
+                            <img src="/product-images/{{this.product.image.[0]}}" alt=""
+                                style="height: 100px; width: auto;">
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="padding-top:50px ;">
+                        <h6 class="product-title">
+                            <a href="/view-single/{{this.product._id}}">{{this.product.Proname}}</a>
+                        </h6>
+                        <h6 class="brand-name">Color : {{this.product.color}}</h6>
+                        <h6 class="brand-name">Ram : {{this.product.ram}}&nbsp;Storage : {{this.product.storage}}</h6>
+                    </div>
+                    <div class="col-md-3" style="padding-top:60px ;">
+                        <h3 class="pro-price">₹{{this.product.price}}</h3>
+                        <h5 class="pro-price">Quantity :{{this.quantity}}</h5>
+                    </div>
+                    <div class="col-md-3" style="padding-top:60px ;">
+                        <h3 class="pro-price">{{this.status}}</h3>
+                        
+                    </div>
+                </div>
+                {{/each}}
+ 
+            </div>
+            <div class="col-md-3">
+                <h1 class="text-center mt-5">Order Address details</h1>
+
+                <div class="col-md-12 mt-1 p-5" id="address-view">
+                    <h4 class="pro-price">Name : {{address.[0].address.Name}}</h4><br>
+                    <h4 class="pro-price">Mobile : {{address.[0].address.mobile}}</h4><br>
+                    <h3 class="pro-price">Address : {{address.[0].address.address}}</h3><br>
+                    <h3 class="pro-price">District : {{address.[0].address.district}}</h3><br>
+                    <h3 class="pro-price">Pincode : {{address.[0].address.pincode}}</h3><br>
+                    <a href="/invoice/{{orderId}}" style="color: rgb(50, 212, 223);">Download invoice</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
