@@ -27,7 +27,7 @@ router.get('/', async (req, res, next) => {
       cartCount = await userHelpers.getCartcount(user1._id)
       wishlist = await userHelpers.getWishlistProducts(user1._id)
     }
-    let banner = await productHelpers.getAllBanner()
+    // let banner = await productHelpers.getAllBanner()
 
     productHelpers.getAllProducts().then((products) => {
       if (wishlist >= 1) {
@@ -39,7 +39,8 @@ router.get('/', async (req, res, next) => {
           }
         }
       }
-      res.render('index', { products, user: true, user1, cartCount, banner, wishlist })
+      // banner,
+      res.render('index', { products, user: true, user1, cartCount, wishlist })
     })
   } catch (error) {
     console.log(error);
