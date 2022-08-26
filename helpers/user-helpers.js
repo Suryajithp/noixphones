@@ -1,6 +1,6 @@
 const db = require('../config/connection')
 const collection = require('../config/collections')
-const client = require('twilio')('AC9b6a70c3478717968ed7ae564fc586d3', 'ba9f7a3a7f85c1eea3ab77ab0ece27cb');
+const client = require('twilio')('AC9b6a70c3478717968ed7ae564fc586d3', '68cbd483a10a0946b6f0e1936cf6b0f3');
 const bcrypt = require('bcrypt');
 const paypal = require('paypal-rest-sdk')
 const objectId = require('mongodb').ObjectId

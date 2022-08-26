@@ -141,7 +141,6 @@ function addToWishlist(proId) {
       console.log(response);
       if (response.remove) {
         swal("Product removed from wishlist");
-        location.reload()
       }
     }
   })
@@ -161,7 +160,8 @@ function removeWishProduct(WishId, proId, userId) {
       if (response.removeProduct) {
         swal("Product removed from wislist")
         location.reload()
-      } else {
+      } 
+      else {
         console.log(response);
       }
     }

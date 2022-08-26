@@ -173,7 +173,7 @@ module.exports = {
                 //         product: 1
                 //     }
                 // },
-                // console.log(product)
+                // console.log(product) 
                 {
                     $lookup: {
                         from: collection.PRODUCT_COLLECTION,
@@ -238,6 +238,15 @@ module.exports = {
             totalAmount.orders = await db.get().collection(collection.ORDER_COLLECTION).count()
             totalAmount.products = await db.get().collection(collection.PRODUCT_COLLECTION).count()
             totalAmount.users = await db.get().collection(collection.USER_COLLECTION).count()
+            if(totalAmount.paypalTotal.length == 0){
+                totalAmount.paypalTotal[0].totalAmount = 0
+            }
+            if(totalAmount.razorpayTotal.length == 0){
+                totalAmount.razorpayTotal[0].totalAmount = 0
+            }
+            if(totalAmount.codTotal.length == 0){
+                totalAmount.codTotal[0].totalAmount = 0
+            }
             totalAmount.income = totalAmount.paypalTotal[0].totalAmount + totalAmount.razorpayTotal[0].totalAmount + totalAmount.codTotal[0].totalAmount
             console.log(totalAmount.income);
             resolve(totalAmount)
