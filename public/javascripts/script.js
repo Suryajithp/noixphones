@@ -186,6 +186,7 @@ function addToCart(proId) {
 }
 
 function changeQuantity(cartId, proId, userId, count) {
+  e.preventDefault()
   let quantity = parseInt(document.getElementById(proId).innerHTML)
   count = parseInt(count)
   console.log(count)

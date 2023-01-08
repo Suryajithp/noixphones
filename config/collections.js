@@ -10,6 +10,9 @@ module.exports={
     CUPON_COLLECTION:'cupon',
     WISH_COLLECTION:'wishlist',
     WALLET_COLLECTION:'wallet',
+
+
+    
     //// otp//////
 
 
